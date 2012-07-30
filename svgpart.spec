@@ -1,27 +1,27 @@
-Name: svgpart
-Summary: A SVG KPart
-Version: 4.8.97
-Release: 1
-Epoch: 2
-Group: Graphical desktop/KDE
-License: GPLv2
-URL: http://www.kde.org
-Source: ftp://ftp.kde.org/pub/kde/unstable/%version/src/%name-%version.tar.xz
-BuildRequires: kdelibs4-devel >= 2:%{version}
-Conflicts: kdegraphics4-core < 2:4.6.90
+Name:		svgpart
+Summary:	A SVG KPart
+Version:	4.8.97
+Release:	1
+Epoch:		2
+Group:		Graphical desktop/KDE
+License:	GPLv2
+URL:		http://www.kde.org
+Source:		ftp://ftp.kde.org/pub/kde/unstable/%{version}/src/%{name}-%{version}.tar.xz
+BuildRequires:	kdelibs4-devel
+Conflicts:	kdegraphics4-core < 2:4.6.90
 
 %description
 A SVG KPart Service.
 
 %files
-%_kde_libdir/kde4/svgpart.so
-%_kde_appsdir/svgpart/svgpart.rc
-%_kde_services/svgpart.desktop
+%{_kde_libdir}/kde4/svgpart.so
+%{_kde_appsdir}/svgpart/svgpart.rc
+%{_kde_services}/svgpart.desktop
 
 #----------------------------------------------------------------------
 
 %prep
-%setup -q 
+%setup -q
 
 %build
 %cmake_kde4
