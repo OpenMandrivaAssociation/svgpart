@@ -1,6 +1,6 @@
 Name:		svgpart
 Summary:	A SVG KPart
-Version:	14.12.0
+Version:	4.14.3
 Release:	1
 Epoch:		2
 Group:		Graphical desktop/KDE
@@ -12,7 +12,7 @@ URL:		http://www.kde.org
 %else
 %define ftpdir stable
 %endif
-Source0:	ftp://ftp.kde.org/pub/kde/%{ftpdir}/applications/%{version}/src/%{name}-%{version}.tar.xz
+Source:		ftp://ftp.kde.org/pub/kde/%{ftpdir}/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	kdelibs4-devel
 Conflicts:	kdegraphics4-core < 2:4.6.90
 
