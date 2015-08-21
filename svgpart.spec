@@ -1,7 +1,7 @@
 Name:		svgpart
 Summary:	A SVG KPart
-Version:	15.04.3
-Release:	2
+Version:	15.08.0
+Release:	1
 Epoch:		2
 Group:		Graphical desktop/KDE
 License:	GPLv2
@@ -30,7 +30,8 @@ A SVG KPart Service.
 %setup -q
 
 %build
-%cmake_kde4
+%cmake_kde4 \
+	-DCMAKE_MINIMUM_REQUIRED_VERSION=3.1
 %make
 
 %install
