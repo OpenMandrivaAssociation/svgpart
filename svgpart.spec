@@ -1,6 +1,6 @@
 Name:		svgpart
 Summary:	A SVG KPart
-Version:	15.08.2
+Version:	15.08.3
 Release:	1
 Epoch:		2
 Group:		Graphical desktop/KDE
