@@ -1,28 +1,30 @@
+%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Name:		svgpart
 Summary:	A SVG KPart
-Version:	16.12.2
+Version:	17.04.0
 Release:	1
 Epoch:		2
 Group:		Graphical desktop/KDE
 License:	GPLv2
 URL:		http://www.kde.org
-%define is_beta %(if test `echo %version |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
-%if %{is_beta}
-%define ftpdir unstable
-%else
-%define ftpdir stable
-%endif
-Source0:	http://download.kde.org/%{ftpdir}/applications/%{version}/src/%{name}-%{version}.tar.xz
-BuildRequires:	kdelibs4-devel
+Source0:	http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
+BuildRequires:	cmake(ECM)
+BuildRequires:	cmake(Qt5Core)
+BuildRequires:	cmake(Qt5Gui)
+BuildRequires:	cmake(Qt5Widgets)
+BuildRequires:	cmake(Qt5Svg)
+BuildRequires:	cmake(KF5CoreAddons)
+BuildRequires:	cmake(KF5Parts)
+BuildRequires:	ninja
 Conflicts:	kdegraphics4-core < 2:4.6.90
 
 %description
 A SVG KPart Service.
 
-%files                                                                                                 
-%{_libdir}/kde4/svgpart.so                                                                             
-%{_datadir}/apps/svgpart/svgpart.rc                                                                    
-%{_datadir}/kde4/services/svgpart.desktop 
+%files -f svgpart.lang
+%{_libdir}/qt5/plugins/svgpart.so
+%{_datadir}/kxmlgui5/svgpart
+%{_datadir}/kservices5/svgpart.desktop
 
 #----------------------------------------------------------------------
 
@@ -30,10 +32,9 @@ A SVG KPart Service.
 %setup -q
 
 %build
-%cmake_kde4 \
-	-DCMAKE_MINIMUM_REQUIRED_VERSION=3.1
-%make
+%cmake_kde5
+%ninja
 
 %install
-%makeinstall_std -C build
-
+%ninja_install -C build
+%find_lang svgpart
