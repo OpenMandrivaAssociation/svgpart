@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   svgpart-17.12.1.tar.xz: 25c27eade052ef2e8d9661451299e41fd680eb94
+sources:
+  svgpart-17.12.2.tar.xz: 89b9342e56c95d40f01afad4aa50eddd472787b4
