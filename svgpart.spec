@@ -1,7 +1,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Name:		svgpart
 Summary:	A SVG KPart
-Version:	 18.11.90
+Version:	 18.12.0
 Release:	1
 Epoch:		2
 Group:		Graphical desktop/KDE
