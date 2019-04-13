@@ -1,9 +1,8 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Name:		svgpart
 Summary:	A SVG KPart
-Version:	 18.12.3
-Release:	2
-Epoch:		2
+Version:	19.04.0
+Release:	1
 Group:		Graphical desktop/KDE
 License:	GPLv2
 URL:		http://www.kde.org
@@ -22,8 +21,7 @@ Conflicts:	kdegraphics4-core < 2:4.6.90
 A SVG KPart Service.
 
 %files -f svgpart.lang
-%{_libdir}/qt5/plugins/svgpart.so
-%{_datadir}/kxmlgui5/svgpart
+%{_libdir}/qt5/plugins/kf5/parts/svgpart.so
 %{_datadir}/kservices5/svgpart.desktop
 
 #----------------------------------------------------------------------
