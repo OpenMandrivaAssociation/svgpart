@@ -1,12 +1,12 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Name:		svgpart
 Summary:	A SVG KPart
-Version:	19.11.90
+Version:	19.12.0
 Release:	1
 Group:		Graphical desktop/KDE
 License:	GPLv2
 URL:		http://www.kde.org
-Source0:	http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
+Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(Qt5Core)
 BuildRequires:	cmake(Qt5Gui)
