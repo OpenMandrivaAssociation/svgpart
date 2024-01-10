@@ -2,7 +2,7 @@
 Name:		svgpart
 Summary:	A SVG KPart
 Version:	23.08.4
-Release:	2
+Release:	3
 Group:		Graphical desktop/KDE
 License:	GPLv2
 URL:		http://www.kde.org
