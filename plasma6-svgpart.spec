@@ -2,7 +2,7 @@
 Name:		plasma6-svgpart
 Summary:	A SVG KPart
 Version:	24.01.90
-Release:	3
+Release:	1
 Group:		Graphical desktop/KDE
 License:	GPLv2
 URL:		http://www.kde.org
@@ -12,10 +12,10 @@ BuildRequires:	cmake(Qt6Core)
 BuildRequires:	cmake(Qt6Gui)
 BuildRequires:	cmake(Qt6Widgets)
 BuildRequires:	cmake(Qt6Svg)
+BuildRequires:	cmake(Qt6SvgWidgets)
 BuildRequires:	cmake(KF6CoreAddons)
 BuildRequires:	cmake(KF6Parts)
 BuildRequires:	ninja
-Conflicts:	kdegraphics4-core < 2:4.6.90
 
 %description
 A SVG KPart Service.
