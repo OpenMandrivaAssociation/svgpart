@@ -1,7 +1,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Name:		plasma6-svgpart
 Summary:	A SVG KPart
-Version:	24.01.90
+Version:	24.01.95
 Release:	1
 Group:		Graphical desktop/KDE
 License:	GPLv2
