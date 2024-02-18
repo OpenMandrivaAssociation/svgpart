@@ -1,12 +1,19 @@
+%define git 20240218
+%define gitbranch release/24.02
+%define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Name:		plasma6-svgpart
 Summary:	A SVG KPart
-Version:	24.01.95
-Release:	1
+Version:	24.01.96
+Release:	%{?git:0.%{git}.}1
 Group:		Graphical desktop/KDE
 License:	GPLv2
 URL:		http://www.kde.org
+%if 0%{?git:1}
+Source0:	https://invent.kde.org/graphics/svgpart/-/archive/%{gitbranch}/svgpart-%{gitbranchd}.tar.bz2#/svgpart-%{git}.tar.bz2
+%else
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/svgpart-%{version}.tar.xz
+%endif
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(Qt6Core)
 BuildRequires:	cmake(Qt6Gui)
@@ -28,7 +35,7 @@ A SVG KPart Service.
 #----------------------------------------------------------------------
 
 %prep
-%autosetup -p1 -n svgpart-%{?git:master}%{!?git:%{version}}
+%autosetup -p1 -n svgpart-%{?git:%{gitbranchd}}%{!?git:%{version}}
 %cmake \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
 	-G Ninja
