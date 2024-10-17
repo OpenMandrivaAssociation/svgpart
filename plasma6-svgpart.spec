@@ -8,7 +8,7 @@ Version:	24.08.2
 Release:	%{?git:0.%{git}.}1
 Group:		Graphical desktop/KDE
 License:	GPLv2
-URL:		http://www.kde.org
+URL:		https://www.kde.org
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/graphics/svgpart/-/archive/%{gitbranch}/svgpart-%{gitbranchd}.tar.bz2#/svgpart-%{git}.tar.bz2
 %else
