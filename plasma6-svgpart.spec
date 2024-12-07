@@ -5,7 +5,7 @@
 Name:		plasma6-svgpart
 Summary:	A SVG KPart
 Version:	24.08.3
-Release:	%{?git:0.%{git}.}1
+Release:	%{?git:0.%{git}.}2
 Group:		Graphical desktop/KDE
 License:	GPLv2
 URL:		https://www.kde.org
